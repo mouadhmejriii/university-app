@@ -1,24 +1,65 @@
-import photo from './assets/mouadh2.jpeg'
 import './App.css'
+import StudentCard from './components/StudentCard.jsx'
+import { Header, Navbar, Footer } from './components/Layout.jsx'
+import mouadhImage from './assets/mouadh2.jpeg'
+
+const etudiants = [
+  {
+    prenom: 'Mouadh',
+    nom: 'Mejri',
+    email: 'mouadhmejriii@gmail.com',
+    telephone: '+216 94 290 327',
+    filiere: "Génie Logiciel et Systèmes d'Information",
+    anneeEtude: '2ème année',
+    groupe: 'GLSI A',
+    ville: 'Mahdia',
+    image: mouadhImage,
+  },
+  {
+    prenom: 'Sarra',
+    nom: 'Trabelsi',
+    email: 'sarra.trabelsi@gmail.com',
+    telephone: '+216 22 345 678',
+    filiere: "Génie Logiciel et Systèmes d'Information",
+    anneeEtude: '2ème année',
+    groupe: 'GLSI 1',
+    ville: 'Sousse',
+  },
+  {
+    prenom: 'Mariem',
+    nom: 'Khalfallah',
+    email: 'mariem.khalfallah@gmail.com',
+    telephone: '+216 27 567 890',
+    filiere: "Génie Logiciel et Systèmes d'Information",
+    anneeEtude: '2ème année',
+    groupe: 'GLSI 2',
+  },
+]
 
 function App() {
   return (
-    <div className="page">
-      <div className="card">
-        <img className="avatar" src={photo} alt="Photo de l'étudiant" />
+    <div className="app">
+      <Header />
+      <Navbar />
 
-        <h1>Fiche étudiant</h1>
+      <main className="container">
+        {etudiants.map((etudiant) => (
+          <StudentCard
+            key={etudiant.email}
+            prenom={etudiant.prenom}
+            nom={etudiant.nom}
+            email={etudiant.email}
+            telephone={etudiant.telephone}
+            filiere={etudiant.filiere}
+            anneeEtude={etudiant.anneeEtude}
+            groupe={etudiant.groupe}
+            ville={etudiant.ville}
+            image={etudiant.image}
+          />
+        ))}
+      </main>
 
-        <p><strong>Nom & Prénom :</strong> Mouadh Mejri</p>
-        <p><strong>Email :</strong> mouadhmejriii@gmail.com</p>
-        <p><strong>Téléphone :</strong> +216 94 290 327</p>
-        <p><strong>Filière :</strong> Génie Logiciel et Systèmes d'Information</p>
-        <p><strong>Année d'étude :</strong> 2026</p>
-        <p><strong>Groupe :</strong> GLSI A</p>
-        <p><strong>Ville :</strong> Mahdia</p>
-
-        <a className="btn" href="mailto:mouadhmejriii@gmail.com">Contacter</a>
-      </div>
+      <Footer />
     </div>
   )
 }

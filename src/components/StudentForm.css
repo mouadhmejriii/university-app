@@ -1,0 +1,27 @@
+form{
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+label{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5;
+}
+input{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5;
+    box-sizing  : border-box;
+    cusror: pointer;
+}
+:hover{
+    button:hover{background-color: #333;}
+    input:focus{border-color: blue;}
+}
